@@ -23,4 +23,10 @@
     </EmbeddedResource>
   </ItemGroup>
 
+	<ItemGroup>
+		<Content Include="Cards\*">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+
 </Project>

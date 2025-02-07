@@ -25,6 +25,7 @@
             // 
             LabelTitle.AutoSize = true;
             LabelTitle.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            LabelTitle.ForeColor = Color.White;
             LabelTitle.Location = new Point(75, 20);
             LabelTitle.Name = "LabelTitle";
             LabelTitle.Size = new Size(124, 31);
@@ -53,6 +54,7 @@
             // LabelNickname
             // 
             LabelNickname.AutoSize = true;
+            LabelNickname.ForeColor = Color.White;
             LabelNickname.Location = new Point(12, 91);
             LabelNickname.Name = "LabelNickname";
             LabelNickname.Size = new Size(78, 20);
@@ -63,6 +65,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.MediumVioletRed;
             ClientSize = new Size(284, 250);
             Controls.Add(LabelNickname);
             Controls.Add(LoginButton);

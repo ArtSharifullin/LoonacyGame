@@ -13,7 +13,7 @@ namespace LoonacyServer
 
         private bool _IsStarted = false;
 
-        private static string jsonString = File.ReadAllText("C:\\Learning\\ORIS_\\TestGame\\LoonacyServer\\cards.json");
+        private static string jsonString = File.ReadAllText("cards.json");
         private List<string> _cardNames = JsonSerializer.Deserialize<List<string>>(jsonString);
 
         public void ProcessMessage(string message, ClientHandler sender)
@@ -30,7 +30,7 @@ namespace LoonacyServer
                     }
                     if (_IsStarted)
                     {
-                        sender.SendMessage($"JOIN|ERROR|The game is already strated, please wait...");
+                        sender.SendMessage($"JOIN|ERROR|The game is already started, please wait...");
                         return;
                     }
                     sender.SetNickname(nickname);
@@ -64,31 +64,25 @@ namespace LoonacyServer
                     string card = parts[2];
                     string target = parts[3];
                     sender.SendMessage($"MOVE|{nickname}|{card}|{target}");
-                    BroadcastMessage($"MOVE|{nickname}|{card}|{target}");
-                    CheckForWinCondition(nickname);
+
+                    //CheckForWinCondition(koloda_list.Count(), nickname);
                     break;
                 case "WIN":
                     nickname = parts[1];
                     sender.SendMessage($"WIN|{nickname}");
                     BroadcastMessage($"WIN|{nickname}");
                     break;
+                case "UPDATE":
+                    nickname = parts[1];
+                    //var kolodaCount = parts[4].Split("&&").ToList().Count();
+                    //Console.WriteLine( kolodaCount);
+                    Console.WriteLine(parts[4]);
+
+                    BroadcastMessage($"UPDATE|{nickname}|{parts[2]}|{parts[3]}|{parts[4]}|KSBROSA");
+                    CheckForWinCondition(parts[4] == "", nickname);
+                    break;
             }
         }
-
-        /*private void KrupieNasral(List<string> cards)
-        {
-
-            foreach (var player in _players)
-            {
-                var koloda = string.Join("&&", RandomKoloda(cards, 7));
-                player.SendMessage($"KOLODA|PLAYER|{player.Nickname}|{koloda}");
-                Console.WriteLine($"{koloda} - {player.Nickname}");
-            }
-            var KolodaSbrosa = string.Join("&&", RandomKoloda(cards, 2));
-            BroadcastMessage($"KOLODA|SBROS|{KolodaSbrosa}");
-            Console.WriteLine($"KOLODA SBROSA - {KolodaSbrosa}");
-            BroadcastMessage($"START_GAME");
-        }*/
 
         private string RandomKoloda(List<string> cards, int num)
         {
@@ -117,6 +111,7 @@ namespace LoonacyServer
             {
                 _IsStarted = true;
                 var kolodaSbrosa = RandomKoloda(_cardNames, 2);
+                Console.WriteLine($"START_GAME|{kolodaSbrosa}");
                 BroadcastMessage($"START_GAME|{kolodaSbrosa}");
             }
         }
@@ -129,10 +124,10 @@ namespace LoonacyServer
             }
         }
 
-        private void CheckForWinCondition(string nickname)
+        private void CheckForWinCondition(bool fl, string nickname)
         {
             // Логика проверки условия победы
-            if (false)
+            if (fl)
             {
                 // Отправить сообщение о победе
                 BroadcastMessage($"WIN|{nickname}");
@@ -143,6 +138,7 @@ namespace LoonacyServer
         {
             _IsStarted = false;
             _players.Clear();
+            _cardNames = JsonSerializer.Deserialize<List<string>>(jsonString);
             Console.WriteLine("Состояние игры сброшено.");
         }
 
