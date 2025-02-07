@@ -604,5 +604,11 @@ namespace LoonacyClient
         {
 
         }
+
+        private void RulesButton_Click(object sender, EventArgs e)
+        {
+            RulesForm rules = new RulesForm();
+            rules.ShowDialog();
+        }
     }
 }

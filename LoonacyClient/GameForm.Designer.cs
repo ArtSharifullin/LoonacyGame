@@ -37,6 +37,7 @@
             KolodaPanel = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             NicknameLabel = new Label();
+            RulesButton = new Button();
             ChatPanel.SuspendLayout();
             CardsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Card7).BeginInit();
@@ -252,6 +253,7 @@
             // 
             ButtonsPanel.Anchor = AnchorStyles.Bottom | AnchorStyles.Left;
             ButtonsPanel.BackColor = Color.Transparent;
+            ButtonsPanel.Controls.Add(RulesButton);
             ButtonsPanel.Controls.Add(PassButton);
             ButtonsPanel.Location = new Point(2, 508);
             ButtonsPanel.Margin = new Padding(3, 4, 3, 4);
@@ -263,7 +265,7 @@
             // PassButton
             // 
             PassButton.BackColor = Color.MistyRose;
-            PassButton.Location = new Point(0, 30);
+            PassButton.Location = new Point(0, 53);
             PassButton.Margin = new Padding(3, 4, 3, 4);
             PassButton.Name = "PassButton";
             PassButton.Size = new Size(222, 38);
@@ -306,6 +308,18 @@
             NicknameLabel.TabIndex = 10;
             NicknameLabel.Text = "label1";
             NicknameLabel.Click += label1_Click;
+            // 
+            // RulesButton
+            // 
+            RulesButton.BackColor = Color.MistyRose;
+            RulesButton.Location = new Point(0, 0);
+            RulesButton.Margin = new Padding(3, 4, 3, 4);
+            RulesButton.Name = "RulesButton";
+            RulesButton.Size = new Size(222, 38);
+            RulesButton.TabIndex = 1;
+            RulesButton.Text = "Rules";
+            RulesButton.UseVisualStyleBackColor = false;
+            RulesButton.Click += RulesButton_Click;
             // 
             // GameForm
             // 
@@ -369,5 +383,6 @@
         private Panel KolodaPanel;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private Label NicknameLabel;
+        private Button RulesButton;
     }
 }
