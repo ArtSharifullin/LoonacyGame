@@ -63,6 +63,16 @@ namespace LoonacyClient.Properties {
         /// <summary>
         ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap monkey {
+            get {
+                object obj = ResourceManager.GetObject("monkey", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap photo_1_2025_01_30_16_14_34 {
             get {
                 object obj = ResourceManager.GetObject("photo_1_2025-01-30_16-14-34", resourceCulture);

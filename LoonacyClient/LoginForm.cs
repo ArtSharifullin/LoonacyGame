@@ -26,5 +26,10 @@ namespace LoonacyClient
 
             DialogResult = DialogResult.OK;
         }
+
+        private void LoginForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

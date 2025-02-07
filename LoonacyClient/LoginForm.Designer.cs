@@ -24,11 +24,12 @@
             // LabelTitle
             // 
             LabelTitle.AutoSize = true;
-            LabelTitle.Font = new Font("Microsoft Sans Serif", 16F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            LabelTitle.BackColor = Color.Transparent;
+            LabelTitle.Font = new Font("Microsoft Sans Serif", 26F, FontStyle.Bold);
             LabelTitle.ForeColor = Color.White;
-            LabelTitle.Location = new Point(75, 20);
+            LabelTitle.Location = new Point(47, 9);
             LabelTitle.Name = "LabelTitle";
-            LabelTitle.Size = new Size(124, 31);
+            LabelTitle.Size = new Size(193, 52);
             LabelTitle.TabIndex = 0;
             LabelTitle.Text = "Loonacy";
             // 
@@ -54,10 +55,12 @@
             // LabelNickname
             // 
             LabelNickname.AutoSize = true;
+            LabelNickname.BackColor = Color.Transparent;
+            LabelNickname.Font = new Font("Segoe UI", 15F);
             LabelNickname.ForeColor = Color.White;
-            LabelNickname.Location = new Point(12, 91);
+            LabelNickname.Location = new Point(12, 77);
             LabelNickname.Name = "LabelNickname";
-            LabelNickname.Size = new Size(78, 20);
+            LabelNickname.Size = new Size(131, 35);
             LabelNickname.TabIndex = 4;
             LabelNickname.Text = "Nickname:";
             // 
@@ -66,6 +69,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.MediumVioletRed;
+            BackgroundImage = Properties.Resources.monkey;
             ClientSize = new Size(284, 250);
             Controls.Add(LabelNickname);
             Controls.Add(LoginButton);
@@ -74,6 +78,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "LoginForm";
             Text = "Login";
+            Load += LoginForm_Load;
             ResumeLayout(false);
             PerformLayout();
         }
