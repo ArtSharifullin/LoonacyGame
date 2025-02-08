@@ -32,12 +32,12 @@
             Card2 = new PictureBox();
             pictureBox2 = new PictureBox();
             ButtonsPanel = new Panel();
+            RulesButton = new Button();
             PassButton = new Button();
             pictureBox1 = new PictureBox();
             KolodaPanel = new Panel();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             NicknameLabel = new Label();
-            RulesButton = new Button();
             ChatPanel.SuspendLayout();
             CardsPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)Card7).BeginInit();
@@ -262,6 +262,18 @@
             ButtonsPanel.TabIndex = 6;
             ButtonsPanel.Visible = false;
             // 
+            // RulesButton
+            // 
+            RulesButton.BackColor = Color.MistyRose;
+            RulesButton.Location = new Point(0, 0);
+            RulesButton.Margin = new Padding(3, 4, 3, 4);
+            RulesButton.Name = "RulesButton";
+            RulesButton.Size = new Size(222, 38);
+            RulesButton.TabIndex = 1;
+            RulesButton.Text = "Rules";
+            RulesButton.UseVisualStyleBackColor = false;
+            RulesButton.Click += RulesButton_Click;
+            // 
             // PassButton
             // 
             PassButton.BackColor = Color.MistyRose;
@@ -309,18 +321,6 @@
             NicknameLabel.Text = "label1";
             NicknameLabel.Click += label1_Click;
             // 
-            // RulesButton
-            // 
-            RulesButton.BackColor = Color.MistyRose;
-            RulesButton.Location = new Point(0, 0);
-            RulesButton.Margin = new Padding(3, 4, 3, 4);
-            RulesButton.Name = "RulesButton";
-            RulesButton.Size = new Size(222, 38);
-            RulesButton.TabIndex = 1;
-            RulesButton.Text = "Rules";
-            RulesButton.UseVisualStyleBackColor = false;
-            RulesButton.Click += RulesButton_Click;
-            // 
             // GameForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -336,6 +336,7 @@
             Controls.Add(PlayersLabel);
             Controls.Add(LabelTitle);
             Margin = new Padding(3, 4, 3, 4);
+            MinimumSize = new Size(1280, 680);
             Name = "GameForm";
             Text = "Loonacy Game";
             ChatPanel.ResumeLayout(false);

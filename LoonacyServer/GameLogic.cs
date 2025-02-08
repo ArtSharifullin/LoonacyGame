@@ -107,7 +107,7 @@ namespace LoonacyServer
 
         private void CheckForStartGame()
         {
-            if (_players.Count == 2)
+            if (_players.Count == 4)
             {
                 _IsStarted = true;
                 var kolodaSbrosa = RandomKoloda(_cardNames, 2);
